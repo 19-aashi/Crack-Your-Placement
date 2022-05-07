@@ -1,0 +1,18 @@
+These three approaches came to my mind:
+1. Using nested loop for sorting.
+2. Counting the frequency of elements and storing it.
+3. Using dutch flag approach
+
+I have solved using dutch flag:
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+      int i =0,k = nums.size()-1,j = 0;
+    while(j<=k){
+        if(nums[j]==0)    swap(nums[i++],nums[j++]);
+        else if (nums[j]==1)   j++;
+        else if(nums[j]==2)   swap(nums[j],nums[k--]);
+    }
+           
+    }
+};
